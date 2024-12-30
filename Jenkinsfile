@@ -10,7 +10,17 @@ pipeline {
                 git credentialsId: 'cc988b5f-9f92-4537-97f6-86679fc2d1ca', url: 'https://github.com/saikumar0503/sai.git'
             }
         }
-        stage("Maven Build") {
+        stage("Maven validate") {
+            steps {
+                sh "mvn validate"          
+            }
+        }
+		stage("Maven Test") {
+            steps {
+                sh "mvn test"
+            }
+        }
+		stage("Maven Build") {
             steps {
                 sh "mvn clean package"
                 sh "mv target/*.war target/myweb.war"
