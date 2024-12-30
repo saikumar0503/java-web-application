@@ -1,28 +1,129 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Institute App</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institute Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #0044cc;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #003399;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            background: url('images/hero.jpg') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 5px black;
+            font-size: 2rem;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .about, .courses {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .about img, .courses img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .course {
+            width: calc(33.333% - 20px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: #0044cc;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to XYZ Institute</h1>
-        <p>Your gateway to quality education</p>
+        <h1>Institute of Excellence</h1>
+        <p>Empowering students for a brighter future</p>
     </header>
     <nav>
-        <a href="hello">About Us</a>
-        <a href="#">Courses</a>
-        <a href="#">Contact</a>
+        <a href="#about">About Us</a>
+        <a href="#courses">Courses</a>
+        <a href="#contact">Contact</a>
     </nav>
-    <div class="content">
-        <h2>Our Vision</h2>
-        <p>We strive to provide the best educational resources to empower our students for a brighter future.</p>
-        <h2>Announcements</h2>
-        <p>No new announcements at the moment. Stay tuned for updates.</p>
+    <div class="hero">
+        Welcome to the Institute of Excellence
     </div>
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="about">
+            <p>
+                The Institute of Excellence has been a leader in education for over 25 years. Our mission is to provide quality education and equip students with skills to thrive in the modern world.
+            </p>
+            <img src="images/about.jpg" alt="About Us">
+        </div>
+    </section>
+    <section id="courses">
+        <h2>Our Courses</h2>
+        <div class="courses">
+            <div class="course">
+                <img src="images/course1.jpg" alt="Course 1">
+                <h3>AWS</h3>
+                <p>
+AWS is a cloud platform offering scalable computing, storage, and services to build and grow applications globally.</p>
+            </div>
+            <div class="course">
+                <img src="images/course2.jpg" alt="Course 2">
+                <h3>Azure</h3>
+                <p>Azure is Microsoft's cloud platform providing scalable solutions for computing, storage, AI, and analytics to support diverse business needs.</p>
+            </div>
+            <div class="course">
+                <img src="images/course3.jpg" alt="Course 3">
+                <h3>Devops</h3>
+                <p>DevOps is a practice that integrates development and operations to enable continuous delivery, collaboration, and faster software deployment.</p>
+            </div>
+        </div>
+    </section>
     <footer>
-        <p>© 2024 XYZ Institute. All rights reserved.</p>
+        <p>&copy; 2024 Institute of Excellence. All rights reserved.</p>
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>
