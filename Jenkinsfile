@@ -1,32 +1,37 @@
 pipeline {
     agent any
-    
+
     environment {
         PATH = "/opt/maven3/bin:$PATH"
     }
+
     stages {
         stage("Git Checkout") {
             steps {
                 git credentialsId: 'cc988b5f-9f92-4537-97f6-86679fc2d1ca', url: 'https://github.com/saikumar0503/sai.git'
             }
         }
+
         stage("Maven validate") {
             steps {
-                sh "mvn validate"          
+                sh "mvn validate"
             }
         }
-		stage("Maven Test") {
+
+        stage("Maven Test") {
             steps {
                 sh "mvn test"
             }
         }
-		stage("Maven Build") {
+
+        stage("Maven Build") {
             steps {
                 sh "mvn clean package"
                 sh "mv target/*.war target/myweb.war"
             }
         }
-	/*    
+
+        /*
         stage("deploy-dev") {
             steps {
                 sshagent(['4483c13e-8e2b-4d4e-9eae-6057f987c9be']) {
@@ -36,7 +41,7 @@ pipeline {
                     '''
                 }
             }
-	 /*   
         }
+        */
     }
 }
