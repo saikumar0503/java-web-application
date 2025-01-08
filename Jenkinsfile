@@ -26,6 +26,7 @@ pipeline {
                 sh "mv target/*.war target/myweb.war"
             }
         }
+	/*    
         stage("deploy-dev") {
             steps {
                 sshagent(['4483c13e-8e2b-4d4e-9eae-6057f987c9be']) {
@@ -35,6 +36,7 @@ pipeline {
                     '''
                 }
             }
+	 /*   
         }
     }
 }
